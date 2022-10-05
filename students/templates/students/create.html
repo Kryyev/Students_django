@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create a new student
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Create">
+        <a href="{% url 'student:list' %}">Cancel</a>
+    </form>
+{% endblock %}
