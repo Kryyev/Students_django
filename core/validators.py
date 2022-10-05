@@ -1,5 +1,6 @@
+import re
 
-
+import re
 from django.core.exceptions import ValidationError
 from django.utils.deconstruct import deconstructible
 import sqlite3
@@ -35,16 +36,22 @@ class ValidateUniqueEmail:
             pass
 
 
+@deconstructible
+class CleanFirstName:
+    def FNClean(self, value):
+        cleanf = value[0].apper() + value[1:].lover()
+        return cleanf
 
 
-    # def get_connection():
-    #     connection = sqlite3.connect('data_base/example.sqlite3')
-    #     connection.row_factory = sqlite3.Row
-    #     return connection
-    #
-    # @app.route('/best_selling/<int:count>')
-    # def get_best_selling_tracks(count):
-    #     connection = get_connection()
-    #     tracks = connection.execute('SELECT * FROM best_selling_tracks').fetchmany(count)
-    #     connection.close()
-    #     return render_template('best_tracks.html', tracks=tracks)
+@deconstructible
+class CleanLastName:
+    def LNclean(self, value):
+        cleanl = value[0].apper() + value[1:].lover()
+        return cleanl
+
+
+@deconstructible()
+class CleanPhone:
+    def CleanPhone(self, value):
+        reg = re.compile('\d')
+        return reg

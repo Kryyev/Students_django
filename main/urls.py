@@ -25,7 +25,4 @@ urlpatterns = [
     path('students/', include('students.urls')),
 ]
 
-# https://docs.djangoproject.com:8000/              en/4?te=3
 
-
-# http://127.0.0.1:8088/            students/    update/1/

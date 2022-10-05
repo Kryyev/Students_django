@@ -3,15 +3,6 @@
 {% block title %}{{ title }}{% endblock %}
 {% block custom_css %}
 
-
-    #list{
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        with: 100%
-        }
-    #list_td{
-
-    }
 {% endblock %}
 {% block content %}
     <form method="get">
@@ -20,6 +11,8 @@
         <label for="lname">Last name:</label>
         <td>{% if student.get_age %}{{ student.get_age }}{%endif%}</td>
         <input type="text" id="lname" name="last_name" placeholder="Doe"><br><br>
+        <label for="p">Phone</label>
+        <input type="text" id="p" name="Phone" placeholder="0661234567"><br><br>
         <input type="submit" value="Submit">
     </form>
     <br><br>
